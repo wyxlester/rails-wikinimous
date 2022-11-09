@@ -1,0 +1,7 @@
+<h1>Articles#index</h1>
+
+<% @articles.each do |article| %>
+  <li><input type="checkbox"><%= link_to article.title, article_path(article) %> <%= link_to "Delete", article_path(article), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></li>
+<% end %>
+<br>
+<%= link_to 'Create New Article', new_article_path %>
